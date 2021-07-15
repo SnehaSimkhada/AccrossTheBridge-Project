@@ -3,7 +3,7 @@ function SelectAllData() {
 
   firebase
     .database()
-    .ref("JOURNAL-1")
+    .ref("JOURNAL-1-PUBLISH")
     .on("value", function (AllRecords) {
       AllRecords.forEach(function (CurrentRecord) {
         var item = CurrentRecord.val();
@@ -71,10 +71,9 @@ function SelectAllData() {
         }
       }
 
-      var divContainer = document.getElementById("showData");
+      var divContainer = document.getElementById("showTable");
       divContainer.innerHTML = "";
-      divContainer.append(table);
+      divContainer.appendChild(table);
     });
 }
-
 SelectAllData();
